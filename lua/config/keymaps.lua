@@ -7,3 +7,6 @@ vim.keymap.set('n', '<leader>e', '<cmd>Explore<cr>')
 -- Telescope
 local telescope = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', telescope.find_files, {desc = 'Find a file'})
+
+-- LSP config
+vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<CR>", {desc = "Display LSP Info"})

@@ -25,6 +25,9 @@ vim.g.maplocalleader = "\\"
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- ScrollOff
+vim.opt.scrolloff = 10
+
 -- Seting tab to use 4 spaces
 vim.opt.expandtab = true
 vim.opt.tabstop = 4

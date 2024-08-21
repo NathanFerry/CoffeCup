@@ -21,20 +21,6 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Relative line number
-vim.opt.number = true
-vim.opt.relativenumber = true
-
--- ScrollOff
-vim.opt.scrolloff = 10
-
--- Seting tab to use 4 spaces
-vim.opt.expandtab = true
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-
-vim.opt.termguicolors = true
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -44,7 +30,7 @@ require("lazy").setup({
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "habamax" } },
+  install = { colorscheme = { "catppuccin-frappe" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
 })

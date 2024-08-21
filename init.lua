@@ -1,9 +1,6 @@
 require("config.lazy")
 require("config.keymaps")
 
--- Default colorscheme
-vim.cmd([[colorscheme catppuccin-frappe]])
-
 -- Relative line number
 vim.opt.number = true
 vim.opt.relativenumber = true

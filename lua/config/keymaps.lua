@@ -8,15 +8,15 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 
 -- Telescope
 local telescope = require("telescope.builtin")
-vim.keymap.set("n", "<leader>sf", telescope.find_files, {desc = "Find a file"})
-vim.keymap.set("n", "<leader>sc", telescope.colorscheme, {desc = "List colorschemes"})
+vim.keymap.set("n", "<leader>sf", telescope.find_files, { desc = "Find a file" })
+vim.keymap.set("n", "<leader>sc", telescope.colorscheme, { desc = "List colorschemes" })
 
 -- LSP
-vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<CR>", {desc = "Display LSP Info"})
-vim.keymap.set("n", "<leader>lm", "<cmd>Mason<CR>", {desc = "Display Mason menu"})
+vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<CR>", { desc = "Display LSP Info" })
+vim.keymap.set("n", "<leader>lm", "<cmd>Mason<CR>", { desc = "Display Mason menu" })
 
 -- Lazy
-vim.keymap.set("n", "<leader>m", "<cmd>Lazy<CR>", {desc = "Display Lazy menu"})
+vim.keymap.set("n", "<leader>m", "<cmd>Lazy<CR>", { desc = "Display Lazy menu" })
 
 -- Tab on visual mode
 vim.keymap.set("v", "<Tab>", ">gv")

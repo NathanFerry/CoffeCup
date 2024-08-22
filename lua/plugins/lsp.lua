@@ -5,19 +5,19 @@ local on_attach = function(client, bufnr)
     opts.buffer = bufnr
 
     opts.desc = "Show LSP references"
-    keymap.set("n", "<leader>lR", "<cmd>Telescope lsp_references<CR>", opts)
+    keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
 
     opts.desc = "Show LSP definitions"
-    keymap.set("n", "<leader>ld", "<cmd>Telescope lsp_definitions<CR>", opts)
+    keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
 
     opts.desc = "Go to declaration"
-    keymap.set("n", "<leader>lD", vim.lsp.buf.declaration, opts)
+    keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
 
     opts.desc = "Show LSP implementations"
-    keymap.set("n", "<leader>li", "<cmd>Telescope lsp_implementations<CR>", opts)
+    keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
 
     opts.desc = "Show LSP type definitions"
-    keymap.set("n", "<leader>lt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
+    keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
 
     opts.desc = "See available code actions"
     keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts)
@@ -27,6 +27,26 @@ local on_attach = function(client, bufnr)
 
     opts.desc = "Show documentation for what is under cursor"
     keymap.set("n", "K", vim.lsp.buf.hover, opts)
+end
+
+local lua_ls_setup = function()
+    require("lspconfig").lua_ls.setup({
+        capabilities = require("cmp_nvim_lsp").default_capabilities(),
+        on_attach = on_attach,
+        settings = {
+            Lua = {
+                diagnostics = {
+                    globals = { "vim" }
+                },
+                workspace = {
+                    library = {
+                        [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                        [vim.fn.stdpath("config") .. "/lua"] = true
+                    }
+                }
+            }
+        }
+    })
 end
 
 return {
@@ -49,25 +69,7 @@ return {
                 })
             end,
 
-            ["lua_ls"] = function()
-                require("lspconfig").lua_ls.setup({
-                    capabilities = require("cmp_nvim_lsp").default_capabilities(),
-                    on_attach = on_attach,
-                    settings = {
-                        Lua = {
-                            diagnostics = {
-                                globals = { "vim" }
-                            },
-                            workspace = {
-                                library = {
-                                    [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                                    [vim.fn.stdpath("config") .. "/lua"] = true
-                                }
-                            }
-                        }
-                    }
-                })
-            end
+            ["lua_ls"] = lua_ls_setup
         })
     end
 }

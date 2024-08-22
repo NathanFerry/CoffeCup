@@ -12,7 +12,7 @@ vim.keymap.set("n", "<leader>sf", telescope.find_files, {desc = "Find a file"})
 vim.keymap.set("n", "<leader>sc", telescope.colorscheme, {desc = "List colorschemes"})
 
 -- LSP config
-vim.keymap.set("n", "<leader>lw", "<cmd>LspInfo<CR>", {desc = "Display LSP Info"})
+vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<CR>", {desc = "Display LSP Info"})
 
 -- Tab on visual mode
 vim.keymap.set("v", "<Tab>", ">gv")

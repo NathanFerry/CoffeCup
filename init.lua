@@ -17,6 +17,9 @@ vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 
+-- disable line wraping
+vim.opt.wrap = false
+
 -- Setting virtualedit for visual block mode (Allow cursor to go further than last character)
 vim.opt.virtualedit = "block"
 

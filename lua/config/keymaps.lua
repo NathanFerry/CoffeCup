@@ -42,7 +42,5 @@ keymap.set("n", "<leader>sc", telescope.colorscheme, { desc = "List colorschemes
 keymap.set("n", "<leader>li", "<cmd>LspInfo<CR>", { desc = "Display LSP Info" })
 keymap.set("n", "<leader>lm", "<cmd>Mason<CR>", { desc = "Display Mason menu" })
 
--- Preview
-
 -- Lazy
 keymap.set("n", "<leader>m", "<cmd>Lazy<CR>", { desc = "Display Lazy menu" })

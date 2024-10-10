@@ -4,6 +4,7 @@ vim.g.mapleader = " "
 
 keymap.set("n", "<leader>w", "<cmd>w<cr>")
 keymap.set("n", "<leader>q", "<cmd>q<cr>")
+keymap.set("n", "<leader>Q", "<cmd>q!<cr>")
 keymap.set("n", "<leader>e", "<cmd>Explore<cr>")
 keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "<C-d>", "<C-d>zz")

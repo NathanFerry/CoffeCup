@@ -56,7 +56,9 @@ return {
         "williamboman/mason-lspconfig.nvim"
     },
     config = function ()
-        require("mason").setup()
+        require("mason").setup({
+            PATH = "append"
+        })
         require("mason-lspconfig").setup({
             ensure_installed = {"lua_ls"}
         })

@@ -1,3 +1,18 @@
+local clients_lsp = function ()
+  local bufnr = vim.api.nvim_get_current_buf()
+
+  local active_clients = vim.lsp.get_clients({bufnr = bufnr})
+
+  local clients = {}
+  for _, client in pairs(active_clients) do
+    table.insert(clients, client.name)
+  end
+  if next(clients) == nil then
+    return "No active LSP"
+  end
+  return 'LSP : ' .. table.concat(clients, '|')
+end
+
 return {
     "nvim-lualine/lualine.nvim",
     dependencies = {
@@ -26,8 +41,8 @@ return {
         sections = {
             lualine_a = {"mode"},
             lualine_b = {"branch", "diff", "diagnostics"},
-            lualine_c = {"filename", "lsp_progress"},
-            lualine_x = {"encoding", "fileformat", "filetype"},
+            lualine_c = {"filename", clients_lsp},
+            lualine_x = {"encoding", "filetype"},
             lualine_y = {"progress"},
             lualine_z = {"location"}
         },

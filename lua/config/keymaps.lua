@@ -7,14 +7,13 @@ keymap.set("n", "<leader>q", "<cmd>q<cr>")
 keymap.set("n", "<leader>Q", "<cmd>q!<cr>")
 keymap.set("n", "<leader>e", "<cmd>Explore<cr>")
 keymap.set("n", "<C-u>", "<C-u>zz")
-keymap.set("n", "<C-d>", "<C-d>zz")
 
 -- Tab on visual mode
 keymap.set("v", "<Tab>", ">gv")
 keymap.set("v", "<S-Tab>", "<gv")
 
 -- Hide highlights
-keymap.set({ "n", "v" }, "<leader>/", "<cmd>noh<CR>")
+keymap.set({ "n", "v" }, "<leader>/", "<cmd>noh<cr>")
 
 -- Split window
 keymap.set("n", "ss", "<cmd>split<CR>", { desc = "Split screen horizontaly" })
@@ -41,6 +40,11 @@ keymap.set("n", "<leader>sc", telescope.colorscheme, { desc = "List colorschemes
 -- LSP
 keymap.set("n", "<leader>li", "<cmd>LspInfo<CR>", { desc = "Display LSP Info" })
 keymap.set("n", "<leader>lm", "<cmd>Mason<CR>", { desc = "Display Mason menu" })
+
+-- Icon-Picker
+vim.keymap.set("n", "<Leader><Leader>i", "<cmd>IconPickerNormal<cr>")
+vim.keymap.set("n", "<Leader><Leader>y", "<cmd>IconPickerYank<cr>") --> Yank the selected icon into register
+vim.keymap.set("i", "<C-e>", "<cmd>IconPickerInsert<cr>")
 
 -- Lazy
 keymap.set("n", "<leader>m", "<cmd>Lazy<CR>", { desc = "Display Lazy menu" })

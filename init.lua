@@ -26,4 +26,5 @@ vim.opt.virtualedit = "block"
 -- Ignore case for Neovim command completion
 vim.opt.ignorecase = true
 
+-- Enable 24 bits colors
 vim.opt.termguicolors = true
